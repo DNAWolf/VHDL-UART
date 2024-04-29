@@ -1,0 +1,241 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Mon Apr 29 15:35:01 2024
+# Process ID: 8887
+# Current directory: /home/peter/Dokumente/RWU/4. Semester/Schaltungsentwurf/Vivado/pmUART/pmUART.runs/synth_1
+# Command line: vivado -log UARTRXTX_e.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source UARTRXTX_e.tcl
+# Log file: /home/peter/Dokumente/RWU/4. Semester/Schaltungsentwurf/Vivado/pmUART/pmUART.runs/synth_1/UARTRXTX_e.vds
+# Journal file: /home/peter/Dokumente/RWU/4. Semester/Schaltungsentwurf/Vivado/pmUART/pmUART.runs/synth_1/vivado.jou
+# Running On: localhost.localdomain, OS: Linux, CPU Frequency: 4400.000 MHz, CPU Physical cores: 10, Host memory: 8010 MB
+#-----------------------------------------------------------
+source UARTRXTX_e.tcl -notrace
+Command: synth_design -top UARTRXTX_e -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 8904
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2016.973 ; gain = 401.746 ; free physical = 210 ; free virtual = 4509
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'UARTRXTX_e' [/home/peter/Dokumente/Sandbox/VHDL/Baudrate_Generator/Baudrate_Generator.srcs/sources_1/new/UARTRXTX.vhd:36]
+INFO: [Synth 8-3491] module 'pmBaudrategen_e' declared at '/home/peter/Dokumente/Sandbox/VHDL/Baudrate_Generator/Baudrate_Generator.srcs/sources_1/new/pmBaudrategen_e.vhd:26' bound to instance 'BAUD' of component 'pmBaudrategen_e' [/home/peter/Dokumente/Sandbox/VHDL/Baudrate_Generator/Baudrate_Generator.srcs/sources_1/new/UARTRXTX.vhd:64]
+INFO: [Synth 8-638] synthesizing module 'pmBaudrategen_e' [/home/peter/Dokumente/Sandbox/VHDL/Baudrate_Generator/Baudrate_Generator.srcs/sources_1/new/pmBaudrategen_e.vhd:35]
+INFO: [Synth 8-256] done synthesizing module 'pmBaudrategen_e' (0#1) [/home/peter/Dokumente/Sandbox/VHDL/Baudrate_Generator/Baudrate_Generator.srcs/sources_1/new/pmBaudrategen_e.vhd:35]
+INFO: [Synth 8-3491] module 'pmTX_e' declared at '/home/peter/Dokumente/Sandbox/VHDL/Baudrate_Generator/Baudrate_Generator.srcs/sources_1/new/pmTX_e.vhd:26' bound to instance 'TX' of component 'pmTX_e' [/home/peter/Dokumente/Sandbox/VHDL/Baudrate_Generator/Baudrate_Generator.srcs/sources_1/new/UARTRXTX.vhd:71]
+INFO: [Synth 8-638] synthesizing module 'pmTX_e' [/home/peter/Dokumente/Sandbox/VHDL/Baudrate_Generator/Baudrate_Generator.srcs/sources_1/new/pmTX_e.vhd:36]
+WARNING: [Synth 8-614] signal 'tx_data_start_i' is read in the process but is not in the sensitivity list [/home/peter/Dokumente/Sandbox/VHDL/Baudrate_Generator/Baudrate_Generator.srcs/sources_1/new/pmTX_e.vhd:48]
+WARNING: [Synth 8-614] signal 'current_bit' is read in the process but is not in the sensitivity list [/home/peter/Dokumente/Sandbox/VHDL/Baudrate_Generator/Baudrate_Generator.srcs/sources_1/new/pmTX_e.vhd:48]
+INFO: [Synth 8-256] done synthesizing module 'pmTX_e' (0#1) [/home/peter/Dokumente/Sandbox/VHDL/Baudrate_Generator/Baudrate_Generator.srcs/sources_1/new/pmTX_e.vhd:36]
+INFO: [Synth 8-256] done synthesizing module 'UARTRXTX_e' (0#1) [/home/peter/Dokumente/Sandbox/VHDL/Baudrate_Generator/Baudrate_Generator.srcs/sources_1/new/UARTRXTX.vhd:36]
+WARNING: [Synth 8-3848] Net m_tx_data_rdy in module/entity UARTRXTX_e does not have driver. [/home/peter/Dokumente/Sandbox/VHDL/Baudrate_Generator/Baudrate_Generator.srcs/sources_1/new/UARTRXTX.vhd:32]
+WARNING: [Synth 8-7129] Port clk_i in module pmTX_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_tx_data_rdy in module UARTRXTX_e is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2092.910 ; gain = 477.684 ; free physical = 229 ; free virtual = 4439
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2107.754 ; gain = 492.527 ; free physical = 226 ; free virtual = 4437
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2107.754 ; gain = 492.527 ; free physical = 226 ; free virtual = 4437
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2107.754 ; gain = 0.000 ; free physical = 226 ; free virtual = 4437
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/peter/Dokumente/RWU/4. Semester/Schaltungsentwurf/Vivado/ZYBO_Master.xdc]
+Finished Parsing XDC File [/home/peter/Dokumente/RWU/4. Semester/Schaltungsentwurf/Vivado/ZYBO_Master.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2239.504 ; gain = 0.000 ; free physical = 207 ; free virtual = 4429
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2239.539 ; gain = 0.000 ; free physical = 205 ; free virtual = 4427
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2239.539 ; gain = 624.312 ; free physical = 221 ; free virtual = 4443
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2239.539 ; gain = 624.312 ; free physical = 221 ; free virtual = 4443
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2239.539 ; gain = 624.312 ; free physical = 221 ; free virtual = 4443
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2239.539 ; gain = 624.312 ; free physical = 218 ; free virtual = 4442
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 1     
+	   2 Input   14 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   6 Input   32 Bit        Muxes := 1     
+	   2 Input   14 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port m_tx_data_rdy in module UARTRXTX_e is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2239.539 ; gain = 624.312 ; free physical = 209 ; free virtual = 4436
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2239.539 ; gain = 624.312 ; free physical = 194 ; free virtual = 4431
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2239.539 ; gain = 624.312 ; free physical = 194 ; free virtual = 4431
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2239.539 ; gain = 624.312 ; free physical = 241 ; free virtual = 4418
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2239.539 ; gain = 624.312 ; free physical = 229 ; free virtual = 4408
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2239.539 ; gain = 624.312 ; free physical = 229 ; free virtual = 4408
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2239.539 ; gain = 624.312 ; free physical = 229 ; free virtual = 4408
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2239.539 ; gain = 624.312 ; free physical = 229 ; free virtual = 4408
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2239.539 ; gain = 624.312 ; free physical = 229 ; free virtual = 4408
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2239.539 ; gain = 624.312 ; free physical = 229 ; free virtual = 4408
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     2|
+|2     |CARRY4 |    20|
+|3     |LUT1   |     1|
+|4     |LUT2   |    64|
+|5     |LUT4   |     2|
+|6     |LUT5   |     3|
+|7     |LUT6   |    26|
+|8     |MUXF7  |     1|
+|9     |FDCE   |    15|
+|10    |FDRE   |    33|
+|11    |IBUF   |    11|
+|12    |OBUF   |     1|
+|13    |OBUFT  |     1|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2239.539 ; gain = 624.312 ; free physical = 229 ; free virtual = 4408
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2239.539 ; gain = 492.527 ; free physical = 229 ; free virtual = 4408
+Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2239.539 ; gain = 624.312 ; free physical = 229 ; free virtual = 4408
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2239.539 ; gain = 0.000 ; free physical = 225 ; free virtual = 4408
+INFO: [Netlist 29-17] Analyzing 21 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2239.539 ; gain = 0.000 ; free physical = 497 ; free virtual = 4687
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 65e7b508
+INFO: [Common 17-83] Releasing license: Synthesis
+22 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:14 . Memory (MB): peak = 2239.539 ; gain = 904.344 ; free physical = 496 ; free virtual = 4685
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1822.476; main = 1485.856; forked = 385.259
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3218.914; main = 2207.492; forked = 1011.422
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2239.539 ; gain = 0.000 ; free physical = 496 ; free virtual = 4686
+INFO: [Common 17-1381] The checkpoint '/home/peter/Dokumente/RWU/4. Semester/Schaltungsentwurf/Vivado/pmUART/pmUART.runs/synth_1/UARTRXTX_e.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file UARTRXTX_e_utilization_synth.rpt -pb UARTRXTX_e_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 29 15:35:20 2024...

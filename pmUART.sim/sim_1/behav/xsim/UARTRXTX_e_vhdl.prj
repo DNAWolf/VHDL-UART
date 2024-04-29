@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../../../../../Sandbox/VHDL/Baudrate_Generator/Baudrate_Generator.srcs/sources_1/new/pmBaudrategen_e.vhd" \
+"../../../../../../../../../Sandbox/VHDL/Baudrate_Generator/Baudrate_Generator.srcs/sources_1/new/pmTX_e.vhd" \
+"../../../../../../../../../Sandbox/VHDL/Baudrate_Generator/Baudrate_Generator.srcs/sources_1/new/UARTRXTX.vhd" \
+
+# Do not sort compile order
+nosort

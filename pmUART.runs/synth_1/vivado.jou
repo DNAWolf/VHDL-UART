@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Mon Apr 29 15:35:01 2024
+# Process ID: 8887
+# Current directory: /home/peter/Dokumente/RWU/4. Semester/Schaltungsentwurf/Vivado/pmUART/pmUART.runs/synth_1
+# Command line: vivado -log UARTRXTX_e.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source UARTRXTX_e.tcl
+# Log file: /home/peter/Dokumente/RWU/4. Semester/Schaltungsentwurf/Vivado/pmUART/pmUART.runs/synth_1/UARTRXTX_e.vds
+# Journal file: /home/peter/Dokumente/RWU/4. Semester/Schaltungsentwurf/Vivado/pmUART/pmUART.runs/synth_1/vivado.jou
+# Running On: localhost.localdomain, OS: Linux, CPU Frequency: 4400.000 MHz, CPU Physical cores: 10, Host memory: 8010 MB
+#-----------------------------------------------------------
+source UARTRXTX_e.tcl -notrace
