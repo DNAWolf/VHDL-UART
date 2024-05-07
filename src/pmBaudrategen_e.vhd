@@ -21,6 +21,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.all;
+use work.all;
 
 entity pmBaudrategen_e is
     Port (

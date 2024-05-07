@@ -22,6 +22,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
+use work.all;
 
 entity UARTRXTX_e is
     Port ( m_clk_i : in STD_LOGIC;
