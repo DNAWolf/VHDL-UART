@@ -1,12 +1,12 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: RWU
+-- Engineer: Peter Marschall
 -- 
 -- Create Date: 04/30/2024 02:32:02 PM
 -- Design Name: 
 -- Module Name: pmRX_e - pmRX_a
--- Project Name: 
--- Target Devices: 
+-- Project Name: Schaltungsentwurf 2
+-- Target Devices: Zybo Board
 -- Tool Versions: 
 -- Description: 
 -- 
@@ -32,7 +32,6 @@ entity pmRX_e is
            clk_i : in STD_LOGIC;
            start_br_cnt_o : out STD_LOGIC;
            rx_data_rdy_o : out STD_LOGIC;
-           rx_fin_o : out STD_LOGIC;
            data_o : out STD_LOGIC_VECTOR (7 downto 0));
 end pmRX_e;
 
