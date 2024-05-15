@@ -31,7 +31,8 @@ entity pmTX_e is
            baud_i : in  STD_LOGIC;
            tx_data_i : in  STD_LOGIC_VECTOR (7 downto 0);
            tx_data_start_i : in STD_LOGIC;
-           tx_o : out  STD_LOGIC);
+           tx_o : out  STD_LOGIC;
+           tx_data_ready_o : out STD_LOGIC);
 
 end pmTX_e;
 
