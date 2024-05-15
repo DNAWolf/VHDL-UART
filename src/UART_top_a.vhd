@@ -29,7 +29,6 @@ component pmRX_e is
            clk_i : in STD_LOGIC;
            start_br_cnt_o : out STD_LOGIC;
            rx_data_rdy_o : out STD_LOGIC;
-           rx_fin_o : out STD_LOGIC;
            data_o : out STD_LOGIC_VECTOR (7 downto 0));
 end component;
 
@@ -72,7 +71,6 @@ PORT MAP(
    clk_i => m_clk_i,
    start_br_cnt_o =>baudrate_reset_s,
    rx_data_rdy_o => m_rx_data_ready_o,
-   rx_fin_o => m_rx_fin_o,
    data_o => m_rx_data_o
    );
 

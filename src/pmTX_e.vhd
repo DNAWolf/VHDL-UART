@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 04/23/2024 04:35:35 PM
 -- Design Name: 
--- Module Name: pmBaudrategen_e - pmBaudrategen_a
+-- Module Name: pmTX_e - pmTX_a
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -13,7 +13,7 @@
 -- Dependencies: 
 -- 
 -- Revision:
--- Revision 0.01 - File Created
+-- Revision 0.5 - added rx_data_ready_o
 -- Additional Comments:
 -- 
 ----------------------------------------------------------------------------------

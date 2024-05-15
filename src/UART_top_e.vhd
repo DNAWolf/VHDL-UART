@@ -13,7 +13,7 @@
 -- Dependencies: 
 -- 
 -- Revision:
--- Revision 0.3 - Added m_tx_data_ready_o
+-- Revision 0.5 - Added implemented RXs
 -- Additional Comments:
 -- 
 ----------------------------------------------------------------------------------
@@ -34,7 +34,6 @@ entity UARTRXTX_e is
            m_rx_i : in STD_LOGIC;
            m_tx_o : out STD_LOGIC;
            m_rx_data_ready_o : out std_logic;
-           m_rx_data_o : out STD_LOGIC_VECTOR(7 downto 0);
-           m_rx_fin_o : out STD_LOGIC
+           m_rx_data_o : out STD_LOGIC_VECTOR(7 downto 0)
            );
 end UARTRXTX_e;

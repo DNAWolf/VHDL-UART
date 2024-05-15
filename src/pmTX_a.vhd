@@ -1,6 +1,4 @@
 architecture pmTX_a of pmTX_e is
-    signal baud_reg :  std_logic;
-    signal tx_rdy : std_logic;
     signal data_reg : std_logic_vector (7 downto 0);
     signal current_bit : std_logic;
     signal data_counter : integer;
@@ -13,11 +11,11 @@ data_reg <= tx_data_i;
 ------------------------------------------------------------------------------------------------------------------------------------
 --State Processing
 ------------------------------------------------------------------------------------------------------------------------------------
-tx_fsm : process(baud_i, tx_data_start_i)
+tx_fsm : process(baud_i, tx_data_start_i, state, rst_i)
 begin
     next_state <= state;
     case state is
-        when reset => if(rst_i = '1')then
+        when reset => if(rst_i = '0')then
                         next_state <= reset;
                       else
                         next_state <= idle;
