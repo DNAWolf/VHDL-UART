@@ -17,7 +17,7 @@ begin
 ------------------------------------------------------------------------------------------------------------------------------------
 --State Processing
 ------------------------------------------------------------------------------------------------------------------------------------
-rx_fsm : process(baud_i, state, rx_i, rst_i)
+rx_fsm : process(baud_i, baud_2_i, state, rx_i, rst_i)
 begin
     next_state <= state;
     case state is
@@ -77,14 +77,15 @@ begin
                           end if; 
         when bit7 => if(baud_2_i = '1')then
                             data_o_reg(7) <= rx_i;
+                          end if;
+                          if(baud_i = '1')then
                             next_state <= stop_bit;
                           end if;
-                          if(baud_i = '1' and rx_i = '1')then
-                            next_state <= stop_bit;
-                     else
+        when stop_bit => if(rx_i = '1')then
+                            next_state <= idle;
+                         else
                             next_state <= invalid_data;
-                          end if;  
-        when stop_bit => next_state <= idle;
+                         end if;          
         when invalid_data => next_state <= idle; 
     end case;                                                                                                                                                                                                                
         
