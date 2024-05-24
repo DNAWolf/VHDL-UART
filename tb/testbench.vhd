@@ -60,31 +60,65 @@ stimuli : process
         m_baud_sel_i_s <= '1';
         m_tx_data_i_s <= (others => '0');
         m_tx_start_i_s <= '0';
-        m_rx_i_s <= '0';
+        m_rx_i_s <= '1';
 
         -- Reset generation
-        -- EDIT: Check that m_rst_i is really your reset signal
+        --Testing TX at 115200baud
         m_rst_i_s <= '0';
         wait for 10 ns;
+        ASSERT (m_tx_o_s = '1' and m_tx_data_ready_o_s = '0' and m_rx_data_ready_o_s  ='0' and m_rx_data_o_s  = "00000000") REPORT "RST not working" SEVERITY FAILURE;
         m_rst_i_s <= '1';
         wait for 10 ns;
         m_tx_data_i_s <= "01010101";
         wait for 10ns;
         m_tx_start_i_s <= '1';
-        wait for 5*(12500*TbPeriod);
+        wait for 10*(1086*TbPeriod);
         m_tx_start_i_s <= '0';
-        wait for 5*(12500*TbPeriod);
+        m_baud_sel_i_s <= '0';
+        --Testing TX at 9600baud
+        wait for 3*(12500*TbPeriod);
         m_tx_start_i_s <= '1';
-        wait for 5*(12500*TbPeriod);
+        wait for 10*(13020*TbPeriod);
         m_tx_start_i_s <= '0';
         wait for 10ns;
-
-        -- EDIT Add stimuli here
-        wait for 100 * TbPeriod;
-
+        
+        -- Testing RX at 115200baud
+        
+        m_rst_i_s <= '0';
+        wait for 10 ns;
+        m_rst_i_s <= '1';
+        m_baud_sel_i_s <= '1';
+        wait for 10 ns;
+        m_rx_i_s <= '0';          --start bit
+        wait for (1086*tbPeriod); --start bit
+     
+      loop1 : for k in 0 to 8 loop -- databits + stop bit
+            m_rx_i_s <= not m_rx_i_s;
+            wait for (1086*tbPeriod);
+      end loop loop1;
+      ASSERT (m_rx_data_o_s = "01010101") REPORT "RX DATA NOT CORRECT" SEVERITY FAILURE;
+      
+      -- Testing RX at 9600baud
+      
+      m_rx_i_s <= '1';
+      m_rst_i_s <= '0';
+      wait for 10 ns;
+      m_rst_i_s <= '1';
+      m_baud_sel_i_s <= '0';
+      wait for 10 ns;
+      m_rx_i_s <= '0'; --startbit
+      wait for (13020*tbPeriod); --startbit
+            loop2 : for k in 0 to 8 loop -- databits + stop bit
+            m_rx_i_s <= not m_rx_i_s;
+            wait for (13020*tbPeriod);
+      end loop loop2;
+      ASSERT (m_rx_data_o_s = "01010101") REPORT "RX DATA NOT CORRECT" SEVERITY FAILURE;
+      m_rx_i_s <= '1';
+      
+      wait for 1000*tbPeriod;
         -- Stop the clock and hence terminate the simulation
         TbSimEnded <= '1';
         wait;
-    end process;
+end process;
 
 end tb;
