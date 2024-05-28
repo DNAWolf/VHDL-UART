@@ -34,8 +34,6 @@ end component;
 
 signal baud_s : STD_LOGIC;
 
-signal tx_start_i_sig : STD_LOGIC;
-
 signal baud_2_s : STD_LOGIC;
 signal baudrate_reset_s : STD_LOGIC;
 

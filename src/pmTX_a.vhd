@@ -1,6 +1,5 @@
 architecture pmTX_a of pmTX_e is
     signal data_reg : std_logic_vector (7 downto 0);
-    signal current_bit : std_logic;
     signal data_counter : integer;
     type state_type is (idle, reset, start_bit, bit0, bit1, bit2, bit3, bit4, bit5, bit6, bit7, stop_bit);
     signal state, next_state : state_type;
@@ -23,34 +22,61 @@ begin
         when idle => if(tx_data_start_i = '1' and baud_i = '1')then
                         next_state <= start_bit;
                      end if;
-        when start_bit => if(baud_i = '1')then
+        when start_bit => if(baud_i = '1' and tx_data_start_i = '1')then
                             next_state <= bit0;
                           end if;
-        when bit0 => if(baud_i = '1')then
-                            next_state <= bit1;
+                          if(tx_data_start_i = '0')then
+                            next_state <= idle;
                           end if;
-        when bit1 => if(baud_i = '1')then
+        when bit0 => if(baud_i = '1' and tx_data_start_i = '1')then
+                            next_state <= bit1;                          
+                          end if;
+                          if(tx_data_start_i = '0')then
+                            next_state <= idle;
+                          end if;
+        when bit1 => if(baud_i = '1' and tx_data_start_i = '1')then
                             next_state <= bit2;
                           end if;
-        when bit2 => if(baud_i = '1')then
+                          if(tx_data_start_i = '0')then
+                            next_state <= idle;
+                          end if;                          
+        when bit2 => if(baud_i = '1' and tx_data_start_i = '1')then
                             next_state <= bit3;
                           end if;
-        when bit3 => if(baud_i = '1')then
+                          if(tx_data_start_i = '0')then
+                            next_state <= idle;
+                          end if;                          
+        when bit3 => if(baud_i = '1' and tx_data_start_i = '1')then
                             next_state <= bit4;
                           end if;
-        when bit4 => if(baud_i = '1')then
+                          if(tx_data_start_i = '0')then
+                            next_state <= idle;
+                          end if;                          
+        when bit4 => if(baud_i = '1' and tx_data_start_i = '1')then
                             next_state <= bit5;
                           end if;
-        when bit5 => if(baud_i = '1')then
+                          if(tx_data_start_i = '0')then
+                            next_state <= idle;
+                          end if;                          
+        when bit5 => if(baud_i = '1' and tx_data_start_i = '1')then
                             next_state <= bit6;
                           end if;
-        when bit6 => if(baud_i = '1')then
+                          if(tx_data_start_i = '0')then
+                            next_state <= idle;
+                          end if;                          
+        when bit6 => if(baud_i = '1' and tx_data_start_i = '1')then
                             next_state <= bit7;
-                          end if;     
-        when bit7 => if(baud_i = '1')then
+                          end if;
+                          if(tx_data_start_i = '0')then
+                            next_state <= idle;
+                          end if;                               
+        when bit7 => if(baud_i = '1' and tx_data_start_i = '1')then
                             next_state <= stop_bit;
                           end if;
-        when stop_bit => if(baud_i = '1')then
+                          if(tx_data_start_i = '0')then
+                            next_state <= idle;
+                          end if;                          
+        when stop_bit => if(baud_i = '1' and tx_data_start_i = '1')then
                             next_state <= start_bit;
                           else
                             next_state <= idle;

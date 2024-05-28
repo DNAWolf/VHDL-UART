@@ -3,29 +3,18 @@ architecture pmRX_a of pmRX_e is
 type state_type is (idle, reset, baud_rst, start_bit, bit0, bit1, bit2, bit3, bit4, bit5, bit6, bit7, stop_bit, invalid_data);
 signal state, next_state : state_type;
 signal data_o_reg : STD_LOGIC_VECTOR (7 downto 0);
-signal bit0_s : STD_LOGIC;
-signal bit1_s : STD_LOGIC;
-signal bit2_s : STD_LOGIC;
-signal bit3_s : STD_LOGIC;
-signal bit4_s : STD_LOGIC;
-signal bit5_s : STD_LOGIC;
-signal bit6_s : STD_LOGIC;
-signal bit7_s : STD_LOGIC;
 
 begin
 
 ------------------------------------------------------------------------------------------------------------------------------------
 --State Processing
 ------------------------------------------------------------------------------------------------------------------------------------
-rx_fsm : process(baud_i, baud_2_i, state, rx_i, rst_i)
+rx_fsm : process(baud_i, baud_2_i, state, rx_i)
 begin
     next_state <= state;
     case state is
-        when reset    => if(rst_i = '0')then
-                            next_state <= reset;
-                          else
-                            next_state <= idle;
-                          end if;
+         when reset   => data_o_reg <= (others => '0');
+                         next_state <= idle;
          when idle    => if(rx_i 'event and rx_i = '0')then
                             next_state <= baud_rst;
                          end if;
@@ -93,10 +82,10 @@ end process rx_fsm;
 ------------------------------------------------------------------------------------------------------------------------------------
 --OUTPUTS
 ------------------------------------------------------------------------------------------------------------------------------------
+
 data_o <= (others => '0') when (state = invalid_data or state = reset)else
           data_o_reg when(state = stop_bit or state = idle) else
           (others => '0');
-    
 
 rx_data_rdy_o <= '1' when (state = stop_bit)else
                  '0';
