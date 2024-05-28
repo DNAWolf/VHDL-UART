@@ -7,8 +7,7 @@ This Project was written for the course: "Schaltungsentwurf 2" at the Ravensburg
 
 1. Introduction
 2. Features
-3. Directory Structure
-4. Usage
+3. Usage
 
 ## Introduction
 This project provides a VHDL implementation of a UART Transmitter/Receiver. UART is a widely-used serial communication protocol that allows for asynchronous data transmission between devices. This repository contains the source code, testbenches, and documentation necessary to understand and utilize the UART modules.
@@ -21,21 +20,6 @@ This Design was part of a bigger Project of the University course "Schaltungsent
 - No Parity bit
 - 1x Start Bit and 1x Stop bit
 - Synchronous design: all modules work with the same clock
-
-## Directory Structure
-.
-├── src
-│   ├── pmBaudrategen_e.vhd       # Baudrategen entity
-│   ├── pmBaudrategen_a.vhd       # Baudrategen architecture
-│   ├── pmRX_e.vhd		  # RX entity
-│   ├── pmRX_a.vhd		  # RX architecture
-│   ├── pmTX_e.vhd                # TX entity
-│   ├── pmTX_a.vhd		  # TX architecture
-│   ├── UART_top_e.vhd            # TOP_LEVEL entity
-│   └── UART_top_a.vhd		  # TOP_LEVEL architecture
-├── tb
-│   └── testbench.vhd     # Testbench for the Top-level module
-└── README.md               # README.md
 
 
 ## USAGE
